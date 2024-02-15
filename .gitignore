@@ -1,5 +1,5 @@
 node_modules
 *.min.*
-build
+source
 .idea
 .DS_Store
