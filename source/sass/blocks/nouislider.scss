@@ -1,0 +1,135 @@
+.noUi-target,
+.noUi-target * {
+  touch-action: none;
+  user-select: none;
+  box-sizing: border-box;
+}
+
+.noUi-target {
+  position: relative;
+  background-color: $light-grey;
+  border: none;
+  height: 4px;
+}
+
+.noUi-base,
+.noUi-connects {
+  width: 100%;
+  height: 4px;
+  position: relative;
+  z-index: 1;
+
+  @media (min-width: $tablet-width) {
+    width: 97%;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 101%;
+  }
+}
+
+.noUi-connects {
+  overflow: hidden;
+  z-index: 0;
+}
+
+.noUi-connect,
+.noUi-origin {
+  will-change: transform;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  height: 4px;
+  width: 100%;
+  transform-origin: 0 0;
+  transform-style: flat;
+}
+
+.noUi-vertical .noUi-origin {
+  top: -100%;
+  width: 0;
+}
+
+.noUi-horizontal .noUi-origin {
+  height: 0;
+}
+
+.noUi-handle {
+  backface-visibility: hidden;
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-radius: 100%;
+  border: 2px solid $base-primary;
+  background-color: $white;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.noUi-handle::before {
+  content: "";
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  border-radius: 100%;
+  background-color: $primary-lighter;
+  opacity: 0;
+  transform-origin: center;
+  border: 2px solid $primary-lighter;
+  top: 10%;
+  left: 11%;
+  transform: translate(-50%, -50%) scale(0.75);
+}
+
+.noUi-handle:hover::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.noUi-handle:focus::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.noUi-handle:active::before {
+  background-color: $primary-darker;
+}
+
+.noUi-handle:active:disabled {
+  background-color: $base-grey;
+}
+
+.noUi-touch-area {
+  height: 100%;
+  width: 100%;
+}
+
+.noUi-horizontal {
+  height: 4px;
+}
+
+.noUi-horizontal .noUi-handle {
+  width: 24px;
+  height: 24px;
+  right: -24px;
+  top: -10px;
+}
+
+.noUi-vertical {
+  width: 18px;
+}
+
+.noUi-vertical .noUi-handle {
+  width: 28px;
+  height: 34px;
+  right: -6px;
+  bottom: -17px;
+}
+
+.noUi-connect {
+  background: $primary-lighter;
+}
+
+.noUi-handle-upper {
+  margin: 0 16px 0 0;
+}
