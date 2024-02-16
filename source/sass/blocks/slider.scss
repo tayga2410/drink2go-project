@@ -1,0 +1,335 @@
+.slider {
+  position: relative;
+}
+
+.slider__list {
+  padding: 0;
+  margin: 0;
+}
+
+.slider__item {
+  list-style: none;
+  padding: 18px 0 59px;
+  min-height: 654px;
+
+  @media (min-width: $tablet-width) {
+    padding: 0;
+  }
+
+  @media (min-width: $tablet-width) {
+    min-height: 714px;
+  }
+
+  &--white {
+    background-color: $flat-white;
+
+    @media (min-width: $tablet-width) {
+      background: linear-gradient(180deg, $flat-white 77%, transparent 50%);
+    }
+
+    @media (min-width: $desktop-width) {
+      background-color: $flat-white;
+    }
+  }
+
+  &--violet {
+    background-color: $lavender-latte;
+
+    @media (min-width: $tablet-width) {
+      background: linear-gradient(180deg, $lavender-latte 77%, transparent 50%);
+    }
+
+    @media (min-width: $desktop-width) {
+      background-color: $lavender-latte;
+    }
+  }
+
+  &--black {
+    background-color: $espresso;
+
+    @media (min-width: $tablet-width) {
+      background: linear-gradient(180deg, $espresso 77%, transparent 50%);
+    }
+
+    @media (min-width: $desktop-width) {
+      background-color: $espresso;
+    }
+  }
+}
+
+.slider__item-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (min-width: $tablet-width) {
+    max-width: 606px;
+    margin: 0 auto;
+    padding: 0;
+    flex-direction: column-reverse;
+  }
+
+  @media (min-width: $desktop-width) {
+    max-width: 1255px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 600px 1fr;
+    gap: 29px;
+    justify-items: flex-start;
+    padding: 30px 0 0 12px;
+  }
+}
+
+.slider__item-image {
+  margin: 0 0 5px 0;
+
+  @media (min-width: $tablet-width) {
+    width: 476px;
+    height: 476px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 600px;
+    height: 600px;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.slider__description-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (min-width: $tablet-width) {
+    padding-bottom: 20px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 600px;
+    align-items: flex-start;
+    padding: 150px 0 0 0;
+    margin: 0;
+    height: 100%;
+  }
+}
+
+.slider__badge {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.48px;
+  color: $base-primary;
+  text-transform: uppercase;
+  margin: 0 0 5px 0;
+  font-family: $montserrat-bold;
+
+  @media (min-width: $tablet-width) {
+    padding-top: 60px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 0;
+  }
+}
+
+.slider__heading {
+  font-size: 36px;
+  line-height: 48px;
+  margin: 0 0 9px 0;
+  text-align: center;
+  width: 280px;
+  letter-spacing: 0.72px;
+  font-family: $montserrat-bold;
+
+  @media (min-width: $tablet-width) {
+    width: 608px;
+    font-size: 56px;
+    line-height: 80px;
+    font-weight: 700;
+    letter-spacing: 1.12px;
+    margin: 0 0 16px 0;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin: 0 0 15px 0;
+    text-align: start;
+  }
+}
+
+.slider__description {
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  margin: 0 0 20px 0;
+  padding: 0 20px;
+  max-width: $mobile-width;
+
+  @media (min-width: $tablet-width) {
+    font-size: 20px;
+    line-height: 32px;
+    max-width: $tablet-width;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 0;
+    text-align: left;
+    margin-bottom: 40px;
+    max-width: unset;
+  }
+}
+
+.slider__buy {
+  display: flex;
+  justify-content: space-between;
+  width: 230px;
+}
+
+.slider__price-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.slider__old-price {
+  font-family: $montserrat-regular;
+  font-size: 16px;
+  line-height: 32px;
+  color: $base-primary;
+  text-decoration: line-through;
+  margin: 0 6px 0 0;
+}
+
+.slider__price {
+  font-family: $montserrat-semi-bold;
+  font-size: 20px;
+  line-height: 32px;
+}
+
+.slider__button {
+  padding: 8px 20px;
+  font-family: $montserrat-regular;
+  font-size: 16px;
+  line-height: 24px;
+
+  &:hover,
+  &:focus {
+    background-color: $primary-lighter;
+    border: none;
+    outline: none;
+
+    &:active {
+      background-color: $primary-darker;
+    }
+
+    &:disabled {
+      background-color: $base-grey;
+    }
+  }
+}
+
+.slider__arrow {
+  position: absolute;
+  padding: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 20px;
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: 100%;
+  background-color: transparent;
+  z-index: 1;
+  border: 0;
+  font-size: 0;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url("../../images/arrow-left.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    z-index: 2;
+  }
+
+  &--right {
+    right: 0;
+    left: unset;
+    transform: rotate(180deg);
+  }
+
+  @media (min-width: $tablet-width) {
+    width: 80px;
+    height: 76%;
+  }
+
+  @media (min-width: $desktop-width) {
+    height: 100%;
+  }
+
+  &:hover,
+  &:focus {
+    background-image:
+      linear-gradient(90deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+
+  &:active {
+    background-image:
+      linear-gradient(90deg,
+      rgba(120, 89, 207, 0.25) 0%,
+      rgba(120, 89, 207, 0) 100%
+    );
+  }
+
+  &:disabled {
+    &::after {
+      background-image: url("../../img/svg/arrow-grey.svg");
+    }
+  }
+}
+
+.slider__pagination {
+  display: none;
+
+  @media (min-width: $desktop-width) {
+    display: flex;
+    justify-content: space-between;
+    gap: 9px;
+    width: 202px;
+    height: 20px;
+    position: absolute;
+    background-color: transparent;
+    bottom: 54px;
+    left: 43%;
+  }
+}
+
+.slider__bullet {
+  @media (min-width: $desktop-width) {
+    width: 76px;
+    height: 4px;
+    border: none;
+    cursor: pointer;
+    background-color: $white;
+    transition: background-color 0.3s ease;
+    font-size: 0;
+
+    &:hover,
+    &:focus {
+      background-color: $base-primary;
+    }
+
+    &:active {
+      background-color: $primary-darker;
+    }
+  }
+}
